@@ -1,0 +1,19 @@
+.tags-container {
+  padding: calc(var(--baseFontSize) * 2) calc(var(--baseFontSize) * 2);
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: -1px -5px 25px var(--deSaturatedDarkCyan);
+  .placeholder {
+    opacity: 0.75;
+    color: var(--deSaturatedDarkCyan);
+    letter-spacing: 2px;
+  }
+  .clearTags {
+    text-align: right;
+    color: var(--deSaturatedDarkCyan);
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
