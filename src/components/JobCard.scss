@@ -52,6 +52,12 @@
       border-bottom: 1px solid #cacaca;
     }
   }
+  .justify-content {
+    justify-content: flex-end;
+    @media screen and (max-width: 768px) {
+      justify-content: flex-start;
+    }
+  }
   .jobTags__tag {
     .tag {
       border-radius: 3px;

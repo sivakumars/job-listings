@@ -48,7 +48,7 @@ const JobCard = ({ job }) => {
           </div>
           <div className="jobTags width-40pc">
             <div className="cluster-l">
-              <div>
+              <div className="justify-content">
                 {job.tags.length > 0
                   ? job.tags.map((jobTag, idx) => {
                       return (
