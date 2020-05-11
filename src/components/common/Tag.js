@@ -10,7 +10,7 @@ const Tag = ({ name, cross = false, onTagClick = () => {} }) => {
   };
 
   return (
-    <div className={cross ? `tag` : `tag pad-right-5`}>
+    <span className={cross ? `tag` : `tag pad-right-5`}>
       <span data-tag={name} onClick={onTagClick}>
         {name}
       </span>
@@ -19,7 +19,7 @@ const Tag = ({ name, cross = false, onTagClick = () => {} }) => {
           x
         </span>
       )}
-    </div>
+    </span>
   );
 };
 
