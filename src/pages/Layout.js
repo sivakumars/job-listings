@@ -3,7 +3,7 @@ import "./header.scss";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="layout-container">
       <header className="App-header"></header>
       <div className="centre">{children}</div>
     </div>

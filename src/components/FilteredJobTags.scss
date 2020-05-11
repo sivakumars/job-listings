@@ -3,6 +3,7 @@
   background-color: #fff;
   border-radius: 5px;
   box-shadow: -1px -5px 25px var(--deSaturatedDarkCyan);
+  min-width: var(--minWidthCardContainer);
   .placeholder {
     opacity: 0.75;
     color: var(--deSaturatedDarkCyan);

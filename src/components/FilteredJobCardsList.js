@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "@reach/router";
 
 import JobsListData from "./../config";
 import JobCard from "./JobCard";
 import "./FilteredJobCardsList.scss";
 
-const FilteredJobCardsList = () => {
-  const location = useLocation();
+const FilteredJobCardsList = ({ selectedTags = [] }) => {
   const [jobData, setJobData] = useState([]);
   const [filteredJobs, setFilteredJobs] = useState([]);
 
@@ -24,12 +22,16 @@ const FilteredJobCardsList = () => {
   };
 
   const displayFilteredJobs = selectedJobsList => {
-    const filteredJobs = jobData.filter(displayedJob => {
-      return displayedJob.tags.some(jobTag => {
-        return selectedJobsList.includes(jobTag);
+    if (selectedJobsList.length === 0) {
+      setFilteredJobs([...jobData]);
+    } else {
+      const filteredJobs = jobData.filter(displayedJob => {
+        return displayedJob.tags.some(jobTag => {
+          return selectedJobsList.includes(jobTag);
+        });
       });
-    });
-    setFilteredJobs([...filteredJobs]);
+      setFilteredJobs([...filteredJobs]);
+    }
   };
 
   useEffect(() => {
@@ -40,21 +42,12 @@ const FilteredJobCardsList = () => {
   }, []);
 
   useEffect(() => {
-    if (location.search) {
-      const filterParams = new URLSearchParams(location.search);
-      const filterParamsList =
-        filterParams && filterParams.get("filter")
-          ? filterParams.get("filter").split(",")
-          : [];
-
-      if (filterParamsList.length > 0) {
-        displayFilteredJobs(filterParamsList);
-      }
+    if (selectedTags.length > 0) {
+      displayFilteredJobs(selectedTags);
     } else {
-      console.log("No tags selected", jobData);
-      //setFilteredJobs([...jobData])
+      displayFilteredJobs([]);
     }
-  }, [location.search]);
+  }, [selectedTags, selectedTags.length]);
 
   return (
     <div className="stack-l">

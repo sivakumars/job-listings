@@ -1,9 +1,17 @@
+body {
+  --minWidthContainer: 415px;
+  --minWidthCardContainer: 275px;
+}
+
 .centre {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
   box-sizing: content-box;
   padding: 0 3rem;
+  @media screen and (max-width: 300px) {
+    padding: 0 1rem;
+  }
 }
 
 .cluster-l > * {

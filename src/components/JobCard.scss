@@ -5,6 +5,7 @@
   background-color: #fff;
   border-radius: var(--borderRadius);
   box-shadow: 10px 10px 15px var(--lightGrayish);
+  min-width: var(--minWidthCardContainer);
   .logo {
     max-width: 10vw;
     width: 100%;

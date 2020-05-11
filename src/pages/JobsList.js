@@ -1,12 +1,13 @@
 import React, { useContext, useEffect } from "react";
-import { navigate } from "@reach/router";
+import { navigate, useLocation } from "@reach/router";
 import Layout from "./Layout";
 import FilteredJobTags from "components/FilteredJobTags";
 import FilteredJobCardsList from "components/FilteredJobCardsList";
 import { FilterTagsContext } from "providers/FilterTagsProvider";
 
 const JobsList = () => {
-  const { selectedTags } = useContext(FilterTagsContext);
+  const location = useLocation();
+  const { selectedTags, setSelectedTags } = useContext(FilterTagsContext);
 
   const constructQueryParams = paramsList => {
     return `?filter=${paramsList.join(",")}`;
@@ -14,7 +15,6 @@ const JobsList = () => {
 
   useEffect(() => {
     if (!selectedTags.length) {
-      console.log("Selected Tags Empty", selectedTags);
       navigate("/");
     } else {
       const queryString = constructQueryParams(selectedTags);
@@ -22,11 +22,27 @@ const JobsList = () => {
     }
   }, [selectedTags, selectedTags.length]);
 
+  useEffect(() => {
+    if (location.search) {
+      const filterParams = new URLSearchParams(location.search);
+      const filterParamsList =
+        filterParams && filterParams.get("filter")
+          ? filterParams.get("filter").split(",")
+          : [];
+
+      if (filterParamsList.length > 0) {
+        setSelectedTags(filterParamsList);
+      }
+    } else {
+      setSelectedTags([]);
+    }
+  }, [location.search, setSelectedTags]);
+
   return (
     <Layout>
       <div className="stack-lg-l negative-margin-2">
-        <FilteredJobTags />
-        <FilteredJobCardsList />
+        <FilteredJobTags selectedTags={selectedTags} />
+        <FilteredJobCardsList selectedTags={selectedTags} />
       </div>
     </Layout>
   );
