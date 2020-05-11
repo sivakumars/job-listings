@@ -41,7 +41,6 @@ const FilteredJobCardsList = ({ selectedTags = [] }) => {
       JobsListData.length > 0 ? getJobsWithTags(JobsListData) : [];
     setJobData(jobsListWithTags);
     setFilteredJobs(jobsListWithTags);
-    console.log("Job list Tags", jobsListWithTags);
   }, []);
 
   useEffect(() => {
