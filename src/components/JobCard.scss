@@ -8,39 +8,46 @@
     width: 100%;
     height: auto;
   }
-  .job-details {
-    font-size: calc((var(--baseFontSize) * 0.7) + 0.15vw);
-    .company > span {
-      margin-right: 1em;
-      color: var(--deSaturatedDarkCyan);
-      font-weight: 700;
-      &.badge {
-        font-size: 0.8em;
-        color: #fff;
-        border-radius: 50px;
-        text-transform: uppercase;
-        padding: 8px 8px 5px 8px;
-        &.badge--new {
-          background-color: var(--deSaturatedDarkCyan);
-        }
-        &.badge--featured {
-          background-color: var(--veryDarkGrayish);
+  .job-details-container {
+    .job-details {
+      font-size: calc((var(--baseFontSize) * 0.7) + 0.15vw);
+      .company > span {
+        margin-right: 1em;
+        color: var(--deSaturatedDarkCyan);
+        font-weight: 700;
+        &.badge {
+          font-size: 0.8em;
+          color: #fff;
+          border-radius: 50px;
+          text-transform: uppercase;
+          padding: 8px 8px 5px 8px;
+          &.badge--new {
+            background-color: var(--deSaturatedDarkCyan);
+          }
+          &.badge--featured {
+            background-color: var(--veryDarkGrayish);
+          }
         }
       }
     }
-  }
-  .position {
-    font-size: 1.2em;
-    font-weight: 700;
-    &:hover {
-      cursor: pointer;
-      color: var(--deSaturatedDarkCyan);
+    .position {
+      font-size: 1.2em;
+      font-weight: 700;
+      &:hover {
+        cursor: pointer;
+        color: var(--deSaturatedDarkCyan);
+      }
     }
-  }
-  .location {
-    color: var(--darkGrayish);
-    > * + * {
-      margin-left: 1em;
+    .location {
+      color: var(--darkGrayish);
+      > * + * {
+        margin-left: 1em;
+      }
+    }
+
+    @media screen and (max-width: 560px) {
+      margin-top: -3em;
+      border-bottom: 1px solid #cacaca;
     }
   }
   .jobTags__tag {

@@ -17,7 +17,7 @@ const JobCard = ({ job }) => {
       <div className="switcher-l">
         <div>
           <div className="sidebar-l">
-            <div>
+            <div className="job-details-container">
               <div className="flex-sidebar">
                 <img src={job.logo} className="logo" alt="company logo" />
               </div>
@@ -42,7 +42,7 @@ const JobCard = ({ job }) => {
               </div>
             </div>
           </div>
-          <div className="jobTags max-width-40pc">
+          <div className="jobTags width-40pc">
             <div className="cluster-l">
               <div>
                 {job.tags.length > 0

@@ -7,7 +7,9 @@ const FilterTagsProvider = ({ children }) => {
 
   const removeSelectedTag = deleteTag => {
     const updatedTags = selectedTags.filter(tag => tag !== deleteTag);
-    setSelectedTags([...updatedTags]);
+    updatedTags.length > 0
+      ? setSelectedTags([...updatedTags])
+      : setSelectedTags([]);
   };
 
   const value = useMemo(() => {

@@ -52,6 +52,7 @@ const FilteredJobCardsList = () => {
       }
     } else {
       console.log("No tags selected", jobData);
+      //setFilteredJobs([...jobData])
     }
   }, [location.search]);
 
