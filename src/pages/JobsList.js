@@ -40,7 +40,7 @@ const JobsList = () => {
 
   return (
     <Layout>
-      <div className="stack-lg-l negative-margin-2">
+      <div>
         <FilteredJobTags selectedTags={selectedTags} />
         <FilteredJobCardsList selectedTags={selectedTags} />
       </div>
