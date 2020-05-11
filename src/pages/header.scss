@@ -1,5 +1,8 @@
 .layout-container {
   min-width: var(--minWidthContainer);
+  .bg-cyan {
+    background-color: var(--lightGrayish);
+  }
 }
 
 .App-header {

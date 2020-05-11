@@ -4,6 +4,7 @@
   border-radius: 5px;
   box-shadow: -1px -5px 25px var(--deSaturatedDarkCyan);
   min-width: var(--minWidthCardContainer);
+  transform: translateY(-50%);
   .placeholder {
     opacity: 0.75;
     color: var(--deSaturatedDarkCyan);
