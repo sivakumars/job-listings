@@ -12,9 +12,11 @@ const FilteredJobCardsList = ({ selectedTags = [] }) => {
     let jobsListWithTags = jobsList.map(job => {
       const languages = job["languages"] ? job["languages"] : [];
       const tools = job["tools"] ? job["tools"] : [];
+      const role = job["role"];
+      const level = job["level"];
       return {
         ...job,
-        tags: [...languages, ...tools]
+        tags: [role, level, ...languages, ...tools]
       };
     });
 
@@ -39,6 +41,7 @@ const FilteredJobCardsList = ({ selectedTags = [] }) => {
       JobsListData.length > 0 ? getJobsWithTags(JobsListData) : [];
     setJobData(jobsListWithTags);
     setFilteredJobs(jobsListWithTags);
+    console.log("Job list Tags", jobsListWithTags);
   }, []);
 
   useEffect(() => {

@@ -1,22 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
-//import { useLocation } from "@reach/router";
-
-import "./FilteredJobTags.scss";
-import Tag from "./common/Tag";
 import { FilterTagsContext } from "providers/FilterTagsProvider";
+import Tag from "./common/Tag";
+import "./FilteredJobTags.scss";
 
 const FilteredJobTags = ({ selectedTags = [] }) => {
-  //const location = useLocation();
   const { setSelectedTags } = useContext(FilterTagsContext);
   const [filteredTags, setFilteredTags] = useState([]);
-
-  // useEffect(() => {
-  //   let filterParams = new URLSearchParams(location.search);
-  //   let filterTags = filterParams.get("filter")
-  //     ? filterParams.get("filter").split(",")
-  //     : [];
-  //   setFilteredTags(filterTags);
-  // }, [location.search]);
 
   useEffect(() => {
     if (selectedTags.length > 0) {
