@@ -2,15 +2,17 @@ import React from "react";
 import "./styles/main.scss";
 import JobsList from "./pages/JobsList";
 import FilterTagsProvider from "./providers/FilterTagsProvider";
-import { Router } from "@reach/router";
+import { Router, LocationProvider } from "@reach/router";
 
 function App() {
   return (
-    <FilterTagsProvider>
-      <Router>
-        <JobsList path="/" />
-      </Router>
-    </FilterTagsProvider>
+    <LocationProvider>
+      <FilterTagsProvider>
+        <Router>
+          <JobsList path="/" />
+        </Router>
+      </FilterTagsProvider>
+    </LocationProvider>
   );
 }
 
