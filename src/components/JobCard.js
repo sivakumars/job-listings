@@ -13,7 +13,11 @@ const JobCard = ({ job }) => {
   };
 
   return (
-    <div className="box-l job-container">
+    <div
+      className={
+        job.featured ? `box-l job-container featured` : `box-l job-container`
+      }
+    >
       <div className="switcher-l">
         <div>
           <div className="sidebar-l">

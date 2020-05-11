@@ -1,7 +1,9 @@
 .job-container {
+  --borderRadius: 5px;
+  position: relative;
   padding: calc(var(--baseFontSize) * 1.5) calc(var(--baseFontSize) * 2);
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: var(--borderRadius);
   box-shadow: 10px 10px 15px var(--lightGrayish);
   .logo {
     max-width: 10vw;
@@ -58,6 +60,20 @@
         background-color: var(--deSaturatedDarkCyan);
         color: #fff;
       }
+    }
+  }
+  &.featured {
+    &::before {
+      content: "";
+      width: 5px;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      background-color: var(--deSaturatedDarkCyan);
+      border-top-left-radius: var(--borderRadius);
+      border-bottom-left-radius: var(--borderRadius);
     }
   }
 }
