@@ -29,8 +29,8 @@ const FilteredJobCardsList = ({ selectedTags = [] }) => {
     } else {
       // The following code filters jobs with at least one of the selected tags
       // const filteredJobs = jobData.filter(displayedJob => {
-      //   return displayedJob.tags.some(jobTag => {
-      //     return selectedJobsList.includes(jobTag);
+      //   return selectedJobsList.some(jobTag => {
+      //     return displayedJob.tags.includes(jobTag);
       //   });
       // });
       // The following code filters jobs with  the combination of the selected tags
